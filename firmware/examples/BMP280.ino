@@ -1,5 +1,8 @@
-#include "Adafruit_Sensor.h"
-#include "Adafruit_BMP280.h"
+// IMPORTANT: When including a library in a firmware app, a sub dir prefix is needed
+// before the particular .h file.
+
+#include "Adafruit_BMP280/Adafruit_Sensor.h"
+#include "Adafruit_BMP280/Adafruit_BMP280.h"
 
 // #define BMP_CS A2
 // #define BMP_SCK A3
