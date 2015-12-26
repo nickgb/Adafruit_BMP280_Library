@@ -1,5 +1,5 @@
 {
-	"name": "Adafruit_BMP280_LIbrary",
+	"name": "Adafruit_BMP280",
 	"version": "1.0.0",
 	"author": "Nathan Heskew <heskew@gmail.com>",
 	"license": "MIT",
