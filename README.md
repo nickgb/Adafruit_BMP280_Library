@@ -5,7 +5,7 @@ Minimally modified version of the [Adafruit BMP280](http://www.adafruit.com/prod
 **Only tested on the Photon so far*
 
 ## About this driver
-I2C and SPI support is retained from the [original driver](). 
+I2C and SPI support is retained from the [original driver](https://github.com/adafruit/Adafruit_BMP280_Library). 
 
 ### Wiring
 - BMP280: https://learn.adafruit.com/adafruit-bmp280-barometric-pressure-plus-temperature-sensor-breakout/wiring-and-test
@@ -14,4 +14,4 @@ I2C and SPI support is retained from the [original driver]().
   - SPI: https://docs.particle.io/reference/firmware/photon/#spi
 
 ## About Adafruit
-Adafruit invests time and resources providing this open source code. Please support Adafruit and open-source hardware by purchasing products from Adafruit!
+[Adafruit](http://www.adafruit.com/about) invests time and resources providing this open source code. Please support Adafruit and open-source hardware by purchasing products from Adafruit!
