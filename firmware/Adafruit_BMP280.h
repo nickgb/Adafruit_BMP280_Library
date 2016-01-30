@@ -183,8 +183,7 @@ class Adafruit_BMP280
     float readTemperature(void);
     float readPressure(void);
     float readAltitude(float seaLevelhPa = 1013.25);
-    void  setOversample(uint8_t value); 
-    void  setSamplingTime(uint8_t value);
+    void  writeRegister(uint8_t regNo, uint8_t value); 
 
   private:
 

@@ -205,21 +205,10 @@ void Adafruit_BMP280::readCoefficients(void)
     @brief  write to the oversampling register
 */
 /**************************************************************************/
-    void  setControlReg(uint8_t value)
+void Adafruit_BMP280::writeRegister(uint8_t regNo, uint8_t value)
     {
-        write8(BMP280_REGISTER_CONTROL,  value);
+        write8(regNo,  value);
     }        
-/**************************************************************************/
-
-/**************************************************************************/
-/*!
-    @brief  write to the configuration register - resample time
-*/
-/**************************************************************************/
-   void  setConfigReg(uint8_t value)
-   {
-       write8(BMP280_REGISTER_CONFIG, value);
-   }
 /**************************************************************************/
 
 /*!
