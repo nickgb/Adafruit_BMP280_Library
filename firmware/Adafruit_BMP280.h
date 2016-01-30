@@ -12,6 +12,11 @@
 
   Written by Kevin Townsend for Adafruit Industries.
   BSD license, all text above must be included in any redistribution
+  
+  Updated by Nathan Heskew for Particle Photon
+  
+  Updated by Nick Granger-Brown to expose extra functions
+  
  ***************************************************************************/
 #ifndef __BMP280_H__
 #define __BMP280_H__
@@ -56,7 +61,66 @@
       BMP280_REGISTER_PRESSUREDATA       = 0xF7,
       BMP280_REGISTER_TEMPDATA           = 0xFA,
     };
+       
+/*=========================================================================
+    CONTROL REGISTER (0xF4) values
+    -----------------------------------------------------------------------*/
+    enum
+    {
+        BMP280_CTRL_TEMP_SKIP            = 0<<5;
+        BMP280_CTRL_TEMP_OS_1            = 1<<5;
+        BMP280_CTRL_TEMP_OS_2            = 2<<5;
+        BMP280_CTRL_TEMP_OS_4            = 3<<5;
+        BMP280_CTRL_TEMP_OS_8            = 4<<5;
+        BMP280_CTRL_TEMP_OS_16           = 5<<5;
+    };
 
+    enum
+    {
+        BMP280_CTRL_PRES_SKIP            = 0<<2;
+        BMP280_CTRL_PRES_OS_1            = 1<<2;
+        BMP280_CTRL_PRES_OS_2            = 2<<2;
+        BMP280_CTRL_PRES_OS_4            = 3<<2;
+        BMP280_CTRL_PRES_OS_8            = 4<<2;
+        BMP280_CTRL_PRES_OS_16           = 5<<2;
+    };
+    
+    enum
+    {
+        BMP280_CTRL_MODE_SLEEP           = 0;
+        BMP280_CTRL_MODE_FORCED          = 1;
+        BMP280_CTRL_MODE_NORMAL          = 3;
+    };
+ 
+/*=========================================================================
+    CONFIGURATION REGISTER (0xF5) values
+    -----------------------------------------------------------------------*/
+    enum
+    {
+        BMP280_CNF_FILTER_OFF            = 0<<2;
+        BMP280_CNF_FILTER_C1             = 1<<2;
+        BMP280_CNF_FILTER_C2             = 2<<2;
+        BMP280_CNF_FILTER_C4             = 3<<2;
+        BMP280_CNF_FILTER_C8             = 4<<2;
+        BMP280_CNF_FILTER_C16            = 5<<2;
+    };
+    
+    enum
+    {
+        BMP280_CNF_SMPL_0m5              = 0<<5;
+        BMP280_CNF_SMPL_62m5             = 1<<5;
+        BMP280_CNF_SMPL_125m             = 2<<5;
+        MBP280_CNF_SMPL_250m             = 3<<5;
+        BMP280_CNF_SMPL_500m             = 4<<5;
+        BMP280_CNF_SMPL_1000m            = 5<<5;
+        BMP280_CNF_SMPL_2000m            = 6<<5;
+        BMP280_CNF_SMPL_4000m            = 7<<5;
+    };
+    
+    enum
+    {
+        BMP_CNF_SPI_3WIRE                = 1;
+    }
 /*=========================================================================*/
 
 /*=========================================================================
@@ -119,6 +183,8 @@ class Adafruit_BMP280
     float readTemperature(void);
     float readPressure(void);
     float readAltitude(float seaLevelhPa = 1013.25);
+    void  setOversample(uint8_t value); 
+    void  setSamplingTime(uint8_t value);
 
   private:
 
