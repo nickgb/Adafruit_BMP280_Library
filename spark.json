@@ -1,7 +1,7 @@
 {
 	"name": "Adafruit_BMP280",
-	"version": "1.0.3",
-	"author": "Nathan Heskew <heskew@gmail.com>",
+	"version": "1.1.0",
+	"author": "Nick Granger-Brown <njgrangerb@gmail.com>",
 	"license": "MIT",
-	"description": "Adafruit BMP280 driver for Particle devices"
+	"description": "Fork from Adafruit BMP280 driver 1.0.3"
 }
